@@ -10,7 +10,7 @@ namespace BookTask.BookProviders
     public class BookProvider : IBookProvider
     {
         private readonly List<BookEntity> _entities = new List<BookEntity>();
-        public async Task<bool> CreateAsync(int id, string title, string desc)
+        public async Task<int> CreateAsync(int id, string title, string desc)
         {
             return await Task.Run(() =>
             {
@@ -20,7 +20,7 @@ namespace BookTask.BookProviders
                     Title = title,
                     Description = desc
                 });
-                return true;
+                return 1;
             });
         }
 

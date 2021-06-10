@@ -16,7 +16,7 @@ namespace BookTask.Services
             _bookProvider = bookProvider;
         }
 
-        public async Task<bool> CreateAsync(int id, string title, string description)
+        public async Task<int> CreateAsync(int id, string title, string description)
         {
             return await _bookProvider.CreateAsync(id, title, description);
         }
