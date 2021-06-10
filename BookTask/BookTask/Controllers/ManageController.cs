@@ -34,7 +34,7 @@ namespace BookTask.Controllers
                 return BadRequest();
             }
 
-            var result = await _bookManageService.CreateAsync(bookDto.Id, bookDto.Title, bookDto.Description);
+            var result = await _bookManageService.CreateAsync(bookDto.Title, bookDto.Description);
             return result != 0 ? Ok(result) : BadRequest(result);
         }
 

@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookTask.BookProviders;
+using BookTask.BookProviders.Abstractions;
+using BookTask.Services;
+using BookTask.Services.Abstractions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +29,8 @@ namespace BookTask
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IBookManageService, BookManageService>();
+            services.AddSingleton<IBookProvider, BookProvider>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
