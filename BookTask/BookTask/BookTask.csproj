@@ -17,6 +17,8 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Services\Abstractions\" />
+    <Folder Include="DTO\" />
   </ItemGroup>
 
 </Project>
